@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Scrollama Demo: Fixed JS</title>
+    <meta name="description" content="Scrollama Demo: Fixed JS">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="timeline_scroll.css">
+
+</head>
+
+<body>
+
+    <section id='intro'>
+        <h1 class='intro__hed'>Timeline demo</h1>
+        <p class='intro__dek'>This is where I give some general background about the story. I can have lots'n'lots of text, maybe a second paragraph?</p>
+        <br>
+        <p class='intro__dek'>Yup, a second para works! 0123456789876543210123456789
+        </p>
+    </section>
+
+    <section id='scroll'>
+        <div class='scroll__graphic'>
+            <div class='chart'>
+                <p>0</p>
+            </div>
+        </div>
+
+        <div class='scroll__text'>
+            <div class='step'>
+                <p>April, 1955</p>
+            </div>
+            <div class='step'>
+                <p>May, 1955</p>
+            </div>
+            <div class='step'>
+                <p>June, 1955</p>
+            </div>
+            <div class='step'>
+                <p>July, 1955</p>
+            </div>
+            <div class='step'>
+                <p>August, 1955</p>
+            </div>
+            <div class='step'>
+                <p>September, 1955</p>
+            </div>
+            <div class='step'>
+                <p>October, 1955</p>
+            </div>
+            <div class='step'>
+                <p>November, 1955</p>
+            </div>
+        </div>
+
+    </section>
+
+    <section id='outro'>
+        <p class='intro__dek'>This is the end of the story. Amen. Fin.</p>
+    </section>
+
+
+    <script src='https://d3js.org/d3.v4.min.js'></script>
+    <script src='https://unpkg.com/intersection-observer@0.5.0/intersection-observer.js'></script>
+    <script src='./scrollama.min.js'></script>
+    <script src='./timeline_scroll.js'></script>
+</body>
+
+</html>
