@@ -1,13 +1,43 @@
 // using d3 for convenience
 var container = d3.select('#scroll');
-var graphic = container.select('.scroll__graphic');
-var chart = graphic.select('.chart');
 var text = container.select('.scroll__text');
 var step = text.selectAll('.step');
+
+var graphic = container.select('.scroll__graphic');
+var chart = graphic.select('.chart');
+var caption = graphic.select('.caption');
 
 // initialize the scrollama
 var scroller = scrollama();
 
+// load the story data
+const story = [
+    {
+        "date": "June<br />1955",
+        "image": "./bab.jpg",
+        "caption": "Lorem ipsum dolor sit amet, ex stet dissentiet reprehendunt cum. Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti."
+    },
+    {
+        "date": "July<br />1955",
+        "image": "./bab2.jpg",
+        "caption": "Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti."
+    },
+    {
+        "date": "August<br />1955",
+        "image": "./bab.jpg",
+        "caption": "Lorem ipsum dolor sit amet, ex stet dissentiet reprehendunt cum. Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti."
+    },
+    {
+        "date": "Septembruary<br />1955",
+        "image": "./bab2.jpg",
+        "caption": "Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti. Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti. Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti. Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti. Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti. Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti. Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti."
+    },
+    {
+        "date": "Thermidor<br />1955",
+        "image": "./bab.jpg",
+        "caption": "Lorem ipsum dolor sit amet, ex stet dissentiet reprehendunt cum. Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti."
+    }
+]
 
 // generic window resize listener event
 function handleResize() {
@@ -17,27 +47,67 @@ function handleResize() {
 
     // 2. update width/height of graphic element
     var bodyWidth = d3.select('body').node().offsetWidth;
-
-    var chartMargin = 256;
+    var bodyHeight = window.innerHeight;
     var textWidth = text.node().offsetWidth;
-    var chartWidth = graphic.node().offsetWidth - textWidth - chartMargin;
 
-    chart
-        .style('width', chartWidth + 'px')
-        .style('height', Math.floor(window.innerHeight / 2) + 'px')
+    var chartVerMargin = Math.floor(0.1 * bodyHeight);
+    var chartHorMargin = 8;
+    var captionVerMargin = 4;
 
+    var graphicWidth = bodyWidth - textWidth - chartHorMargin;
+    var graphicLeft = textWidth + chartHorMargin;
 
-    // 3. tell scrollama to update new element dimensions
+    graphic.style('left', graphicLeft + 'px')
+           .style('top', chartVerMargin + 'px')
+           .attr('width', (bodyWidth - textWidth - chartHorMargin) + 'px')
+
+    chart.select('img')
+         .style('width', graphicWidth + 'px')     
+         .style('height',  (Math.floor(0.5 * bodyHeight) - chartVerMargin) + 'px')
+         .style('object-fit', 'contain')
+
+    caption.style('top', captionVerMargin + 'px')
+           .attr('height', Math.floor(0.4 * bodyHeight) + 'px')
+
     scroller.resize();
 }
 
+
+function calculateFadeOutOpacity(progress, scale) {
+    var new_alpha = 1.0
+    if (progress >= (1 - scale)) {
+        new_alpha = (1.0 - progress) / scale
+    }
+    return new_alpha
+}
+
+
+function calculateFadeInOutOpacity(progress, scale) {
+    var new_alpha = 1.0
+    if (progress <= scale) {
+        new_alpha = progress / scale
+    }
+    else if (progress >= (1 - scale)) {
+        new_alpha = (1.0 - progress) / scale
+    }
+    return new_alpha
+}
+
+
 // scrollama event handlers
 function handleStepProgress(response) {
+
     var el = d3.select(response.element);
-    var target_rgb_val = '255,255,255'; //el.attr('data-step');
-    var new_rgb_alpha = 1 - response.progress
-    var rgba = 'rgba(' + target_rgb_val + ', ' + new_rgb_alpha + ')';
-    el.style('color', rgba);
+
+    // update text transparency
+    var text_rgba = 'rgba(255,255,255, ' + calculateFadeOutOpacity(response.progress, 0.85) + ')'
+    el.style('color', text_rgba)
+      .style('border-color', text_rgba);
+
+    // update graphic transparency
+    var caption_rgba = 'rgba(255,255,255, ' + calculateFadeInOutOpacity(response.progress, 0.15) + ')'
+    caption.select('p').style('color', caption_rgba);
+    chart.select('img').style('opacity', calculateFadeInOutOpacity(response.progress, 0.08));    
 }
 
 function handleStepEnter(response) {
@@ -49,8 +119,11 @@ function handleStepEnter(response) {
     })
 
     // update graphic based on step
-    chart.select('p').text(response.index + 1);
-
+    caption.select('p').style('color', 'rgba(255, 255, 255, 0)');
+    caption.select('p').attr('text', story[response.index].caption);
+    chart.select('img')
+         .attr('src', story[response.index].image)
+         .style('opacity', 0.0)
 }
 
 function handleContainerEnter(response) {
@@ -83,7 +156,7 @@ function init() {
         step: '.scroll__text .step',
         progress: true,
         debug: true,
-        offset: 0.25,
+        offset: 0.35,
     })
         .onStepProgress(handleStepProgress)
         .onStepEnter(handleStepEnter)

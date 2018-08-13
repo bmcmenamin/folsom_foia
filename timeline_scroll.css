@@ -10,7 +10,7 @@ body {
     padding: 0;
     font-family: "Courier New", Courier, monospace;
     color: #D0CBD2;
-    background-color: #999;
+    background-color: #000;
 }
 
 body {
@@ -70,14 +70,13 @@ a:hover {
 
 #scroll {
     position: relative;
-    border-top: 2px dashed #000;
-    border-bottom: 2px dashed #000;
 }
 
 .scroll__graphic {
     position: absolute;
     top: 0;
-    right: 2rem;
+    width: 79%;
+    min-width: 250px;
     bottom: auto;
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
@@ -93,60 +92,46 @@ a:hover {
     top: auto;
 }
 
-.scroll__graphic p {
-    text-align: center;
-    padding: 1rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -moz-transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    font-size: 8rem;
-    font-weight: 900;
-    color: #C8A15E;
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-}
-
 .chart {
-    position: absolute;
-    top: 50%;
-    right: 2rem;
-    bottom: auto;
+    position: relative;
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
 }
 
-.chart p {
-    text-align: center;
-    padding: 1rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -moz-transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
+.chart img {
+    width: 100%;
+}
+
+.caption {
+    position: relative;
     transform: translate(-50%, -50%);
-    font-size: 8rem;
-    font-weight: 900;
-    color: #C8A15E;
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
     background-color: #000;
+    width: 100%;
+}
+
+.caption p {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #00000;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
 .scroll__text {
     position: relative;
-    padding: 0 0.1rem;
-    max-width: 30rem;
-    font-size: 1.0rem;
-    width: 20%;
+    font-size: 3vmin;
+    min-width: 100px;
+    max-width: 125px;
+    width: 15%;
 }
 
 .step {
-    margin: 0 auto 2rem auto;
     color: #ffffff;
     background-color: #000000;
-    /* border-bottom: none; */
+    border-bottom: 2px solid #000000;
 }
 
 .step:last-child {
@@ -157,7 +142,12 @@ a:hover {
 }
 
 .step p {
+    font-size: 1.0em;
     text-align: right;
-    padding: 1rem;
-    font-size: 1.5rem;
+    -webkit-transform: rotate(-90deg) translate(-50%, 0%);
+    -moz-transform: rotate(-90deg) translate(-50%, 0%);
+    -ms-transform: rotate(-90deg) translate(-50%, 0%);
+    -o-transform: rotate(-90deg) translate(-50%, 0%);
+    transform: rotate(-90deg) translate(-50%, 0%);
+    white-space:pre-wrap;
 }
