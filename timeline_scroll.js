@@ -1,8 +1,50 @@
+
+// load the story data
+
+const story = [
+    {
+        "date": "June\n1955",
+        "image": "./bab.jpg",
+        "caption": "Lorem ipsum dolor sit amet, ex stet dissentiet reprehendunt cum. Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti."
+    },
+    {
+        "date": "July\n1955",
+        "image": "./bab2.jpg",
+        "caption": "Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti."
+    },
+    {
+        "date": "August\n1955",
+        "image": "./bab.jpg",
+        "caption": "Lorem ipsum dolor sit amet, ex stet dissentiet reprehendunt cum. Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti."
+    },
+    {
+        "date": "Septembruary\n1955",
+        "image": "./bab2.jpg",
+        "caption": "Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti. Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti. Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti. Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti. Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti. Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti. Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti."
+    },
+    {
+        "date": "Thermidor\n1955",
+        "image": "./bab.jpg",
+        "caption": "Lorem ipsum dolor sit amet, ex stet dissentiet reprehendunt cum. Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti."
+    }
+]
+
+
 // using d3 for convenience
 var container = d3.select('#scroll');
-var text = container.select('.scroll__text');
-var step = text.selectAll('.step');
 
+// Populate all the timeline entries on the left
+var text = container.select('.scroll__text');
+text.selectAll("div")
+    .data(story.map(d => d.date))
+    .text(String)
+    .enter()
+      .append("div")
+      .attr("class", "step")
+      .append("p")
+      .text(String);
+
+var step = text.selectAll('.step');
 var graphic = container.select('.scroll__graphic');
 var chart = graphic.select('.chart');
 var caption = graphic.select('.caption');
@@ -10,34 +52,6 @@ var caption = graphic.select('.caption');
 // initialize the scrollama
 var scroller = scrollama();
 
-// load the story data
-const story = [
-    {
-        "date": "June<br />1955",
-        "image": "./bab.jpg",
-        "caption": "Lorem ipsum dolor sit amet, ex stet dissentiet reprehendunt cum. Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti."
-    },
-    {
-        "date": "July<br />1955",
-        "image": "./bab2.jpg",
-        "caption": "Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti."
-    },
-    {
-        "date": "August<br />1955",
-        "image": "./bab.jpg",
-        "caption": "Lorem ipsum dolor sit amet, ex stet dissentiet reprehendunt cum. Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti."
-    },
-    {
-        "date": "Septembruary<br />1955",
-        "image": "./bab2.jpg",
-        "caption": "Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti. Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti. Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti. Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti. Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti. Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti. Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti."
-    },
-    {
-        "date": "Thermidor<br />1955",
-        "image": "./bab.jpg",
-        "caption": "Lorem ipsum dolor sit amet, ex stet dissentiet reprehendunt cum. Vis prima similique contentiones ut, est legere vivendum at, te elitr apeirian interpretaris sea. Vel postea fierent te, quo prima copiosae suavitate ad. Populo postea at eum, quo ex inimicus accusamus. Sit scripserit persequeris consequuntur no. Impedit lucilius eu nam, ex sea justo oporteat, te eam labore doctus deleniti."
-    }
-]
 
 // generic window resize listener event
 function handleResize() {
@@ -67,6 +81,7 @@ function handleResize() {
          .style('object-fit', 'contain')
 
     caption.style('top', captionVerMargin + 'px')
+           .style('left', '25px')
            .attr('height', Math.floor(0.4 * bodyHeight) + 'px')
 
     scroller.resize();
@@ -119,8 +134,10 @@ function handleStepEnter(response) {
     })
 
     // update graphic based on step
-    caption.select('p').style('color', 'rgba(255, 255, 255, 0)');
-    caption.select('p').attr('text', story[response.index].caption);
+    caption.select('p')
+           .style('color', 'rgba(255, 255, 255, 0)')
+           .text(story[response.index].caption);
+
     chart.select('img')
          .attr('src', story[response.index].image)
          .style('opacity', 0.0)
@@ -143,12 +160,8 @@ function handleContainerExit(response) {
 }
 
 function init() {
-    // 1. force a resize on load to ensure proper dimensions are sent to scrollama
     handleResize();
 
-    // 2. setup the scroller passing options
-    // this will also initialize trigger observations
-    // 3. bind scrollama event handlers (this can be chained like below)
     scroller.setup({
         container: '#scroll',
         graphic: '.scroll__graphic',

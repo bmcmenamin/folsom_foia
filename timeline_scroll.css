@@ -114,7 +114,7 @@ a:hover {
 }
 
 .caption p {
-    text-align: center;
+    text-align: left;
     font-size: 0.9rem;
     color: #00000;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
@@ -144,6 +144,7 @@ a:hover {
 .step p {
     font-size: 1.0em;
     text-align: right;
+    overflow: visible;
     -webkit-transform: rotate(-90deg) translate(-50%, 0%);
     -moz-transform: rotate(-90deg) translate(-50%, 0%);
     -ms-transform: rotate(-90deg) translate(-50%, 0%);
