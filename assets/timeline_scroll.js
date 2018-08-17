@@ -56,13 +56,8 @@ function handleResize() {
              .attr('height', Math.floor(0.8 * bodyHeight) + 'px');
     } else {
       CAPTION.style('top', PARAMS.caption.vert_margin + 'px')
-             .style('left', '25px')
              .attr('height', Math.floor(0.4 * bodyHeight) + 'px');
     }
-
-    // CAPTION.select('p')
-     //       .style('width', CAPTION.attr('width'))
-       //     .style('height', CAPTION.attr('height'));
 
     SCROLLER.resize();
 }
@@ -122,7 +117,6 @@ function handleStepEnter(response) {
     STEP.classed('is-active', function (d, i) {
         return i === response.index;
     });
-
 
     CAPTION.select('p')
          .style('color', 'rgba(' + PARAMS.caption.rgb_str + ', 0)')

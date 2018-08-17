@@ -63,6 +63,7 @@ a:hover {
 }
 
 #outro {
+    margin-top: 400px;
     height: 640px;
 }
 
@@ -109,7 +110,6 @@ a:hover {
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-    background-color: #000;
     width: 100%;
 }
 
@@ -131,7 +131,7 @@ a:hover {
 
 .step {
     color: #ffffff;
-    border-bottom: 2px solid #000000;
+    border-top: 2px solid #000000;
 }
 
 .step:last-child {
