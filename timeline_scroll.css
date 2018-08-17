@@ -76,7 +76,7 @@ a:hover {
     position: absolute;
     top: 0;
     width: 79%;
-    min-width: 250px;
+    min-width: 150px;
     bottom: auto;
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
@@ -114,6 +114,7 @@ a:hover {
 }
 
 .caption p {
+    position: relative;
     text-align: left;
     font-size: 0.9rem;
     color: #00000;
@@ -123,8 +124,8 @@ a:hover {
 .scroll__text {
     position: relative;
     font-size: 3vmin;
-    min-width: 100px;
-    max-width: 125px;
+    min-width: 50px;
+    max-width: 105px;
     width: 15%;
 }
 
@@ -141,13 +142,9 @@ a:hover {
 }
 
 .step p {
+    position: relative;
     font-size: 1.0em;
     text-align: right;
     overflow: visible;
-    -webkit-transform: rotate(-90deg) translate(-50%, 0%);
-    -moz-transform: rotate(-90deg) translate(-50%, 0%);
-    -ms-transform: rotate(-90deg) translate(-50%, 0%);
-    -o-transform: rotate(-90deg) translate(-50%, 0%);
-    transform: rotate(-90deg) translate(-50%, 0%);
     white-space:pre-wrap;
 }

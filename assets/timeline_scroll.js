@@ -9,6 +9,7 @@ SCROLL.selectAll("div")
       .append("p")
       .text(String);
 
+
 var STEP = SCROLL.selectAll('.step');
 
 var GRAPHIC = d3.select(PARAMS.container)
@@ -27,32 +28,41 @@ function handleResize() {
     var bodyWidth = d3.select('body').node().offsetWidth;
     var bodyHeight = window.innerHeight;
 
-    var textWidth = SCROLL.node().offsetWidth;
-
+    var scrollWidth = SCROLL.node().offsetWidth;
     var chartVerMargin = Math.floor(0.1 * bodyHeight);
 
-    var graphicWidth = bodyWidth - textWidth - PARAMS.chart.hor_margin;
-    var graphicLeft = textWidth + PARAMS.chart.hor_margin;
+    var graphicWidth = bodyWidth - scrollWidth - PARAMS.chart.hor_margin;
+    var graphicLeft = scrollWidth + PARAMS.chart.hor_margin;
 
     STEP.style('height', Math.floor(window.innerHeight * 0.75) + 'px');
 
+    STEP.selectAll('p')
+        .style('width', Math.floor(window.innerHeight * 0.65) + 'px')
+        .style("text-anchor", "end")
+        .style("transform", "rotate(-90deg) translate(-50%, 0%)")
+        .style("left", (scrollWidth - Math.floor(window.innerHeight * 0.65)) / 2 +"px")
+
     GRAPHIC.style('left', graphicLeft + 'px')
            .style('top', PARAMS.chart.hor_margin + 'px')
-           .attr('width', graphicWidth + 'px')
+           .attr('width', graphicWidth + 'px');
 
     CHART.select('img')
          .style('width', graphicWidth + 'px')     
          .style('height',  (Math.floor(0.5 * bodyHeight) - PARAMS.caption.vert_margin) + 'px')
-         .style('object-fit', 'contain')
+         .style('object-fit', 'contain');
 
     if (CHART.select('img').style('display') === 'none') {
       CAPTION.style('top', chartVerMargin + PARAMS.caption.vert_margin + 'px')
-             .attr('height', Math.floor(0.8 * bodyHeight) + 'px')
+             .attr('height', Math.floor(0.8 * bodyHeight) + 'px');
     } else {
       CAPTION.style('top', PARAMS.caption.vert_margin + 'px')
              .style('left', '25px')
-             .attr('height', Math.floor(0.4 * bodyHeight) + 'px')      
+             .attr('height', Math.floor(0.4 * bodyHeight) + 'px');
     }
+
+    // CAPTION.select('p')
+     //       .style('width', CAPTION.attr('width'))
+       //     .style('height', CAPTION.attr('height'));
 
     SCROLLER.resize();
 }
@@ -121,6 +131,8 @@ function handleStepEnter(response) {
 
     CHART.select('img')
          .attr('src', PARAMS.chart.path + STORY[response.index].chart)
+         .attr('alt', STORY[response.index].alt)
+         .attr('title', STORY[response.index].alt)
          .style('display', 'inline-block')
          .style('opacity', 0.0);
 
