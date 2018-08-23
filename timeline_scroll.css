@@ -36,18 +36,13 @@ a:hover {
     border-bottom: 1px solid currentColor;
 }
 
-#intro {
-    max-width: 40rem;
-    margin: 1rem auto;
-    text-align: center;
-}
 
 .intro__overline {
     font-size: 1.4rem;
 }
 
 .intro__hed {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     margin: 1.5rem auto;
     text-transform: uppercase;
     font-weight: 900;
@@ -55,10 +50,13 @@ a:hover {
 }
 
 .intro__dek {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 
 #intro {
+    max-width: 40rem;
+    margin: 1rem auto;
+    text-align: center;
     margin-bottom: 320px;
 }
 

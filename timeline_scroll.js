@@ -1,5 +1,5 @@
-var SCROLL = d3.select(PARAMS.container).select('.scroll__text');
-
+// Initialize scroll text
+var SCROLL = d3.select('#scroll').select('.scroll__text');
 SCROLL.selectAll("div")
     .data(STORY.map(d => d.step))
     .text(String)
@@ -9,12 +9,43 @@ SCROLL.selectAll("div")
       .append("p")
       .text(String);
 
-
 var STEP = SCROLL.selectAll('.step');
 
-var GRAPHIC = d3.select(PARAMS.container)
-                .select('.scroll__graphic');
 
+// Initialize intro
+d3.select('#intro_headline')
+  .selectAll('div')
+  .data(STATIC_TEXT.headlines)
+  .text(String)
+  .enter()
+    .append('div')
+    .attr('class', 'intro__hed')
+    .append('h1')
+    .text(String);
+
+d3.select('#intro_text')
+  .selectAll('div')
+  .data(STATIC_TEXT.intro_paras)
+  .text(String)
+  .enter()
+    .append('div')
+    .attr('class', 'intro__dek')
+    .append('p')
+    .text(String);
+
+// Initialize outro
+d3.select('#outro')
+  .selectAll('div')
+  .data(STATIC_TEXT.outro_paras)
+  .text(String)
+  .enter()
+    .append('div')
+    .attr('class', 'intro__dek')
+    .append('p')
+    .text(String);
+
+
+var GRAPHIC = d3.select('#scroll').select('.scroll__graphic');
 var CHART = GRAPHIC.select('.chart');
 var CAPTION = GRAPHIC.select('.caption');
 
@@ -38,9 +69,9 @@ function handleResize() {
 
     STEP.selectAll('p')
         .style('width', Math.floor(window.innerHeight * 0.65) + 'px')
-        .style("text-anchor", "end")
-        .style("transform", "rotate(-90deg) translate(-50%, 0%)")
-        .style("left", (scrollWidth - Math.floor(window.innerHeight * 0.65)) / 2 +"px")
+        .style('text-anchor', 'end')
+        .style('transform', "rotate(-90deg) translate(-50%, 0%)")
+        .style('left', (scrollWidth - Math.floor(window.innerHeight * 0.65)) / 2 +'px')
 
     GRAPHIC.style('left', graphicLeft + 'px')
            .style('top', PARAMS.chart.hor_margin + 'px')
@@ -103,11 +134,8 @@ function handleStepProgress(response) {
       .style('color', text_rgba)
       .style('border-color', text_rgba);
 
-    CAPTION.select('p')
-           .style('color', caption_rgba);
-
-    CHART.select('img')
-         .style('opacity', chart_opcaity);    
+    CAPTION.select('p').style('color', caption_rgba);
+    CHART.select('img').style('opacity', chart_opcaity);    
 }
 
 function handleStepEnter(response) {
@@ -119,9 +147,9 @@ function handleStepEnter(response) {
     });
 
     CAPTION.select('p')
-         .style('color', 'rgba(' + PARAMS.caption.rgb_str + ', 0)')
-         .style('display', 'inline-block')
-         .text(STORY[response.index].caption);
+           .style('color', 'rgba(' + PARAMS.caption.rgb_str + ', 0)')
+           .style('display', 'inline-block')
+           .text(STORY[response.index].caption);
 
     CHART.select('img')
          .attr('src', PARAMS.chart.path + STORY[response.index].chart)
@@ -158,24 +186,25 @@ function handleContainerExit(response) {
 }
 
 function init() {
-    handleResize();
+  handleResize();
 
-    SCROLLER.setup({
-        container: PARAMS.container,
-        graphic: '.scroll__graphic',
-        text: '.scroll__text',
-        step: '.scroll__text .step',
-        progress: true,
-        debug: true,
-        offset: 0.35,
-    })
-        .onStepProgress(handleStepProgress)
-        .onStepEnter(handleStepEnter)
-        .onContainerEnter(handleContainerEnter)
-        .onContainerExit(handleContainerExit);
+  SCROLLER.setup({
+      container: '#scroll',
+      graphic: '.scroll__graphic',
+      text: '.scroll__text',
+      step: '.scroll__text .step',
+      progress: true,
+      debug: false,
+      offset: 0.35,
+  })
+      .onStepProgress(handleStepProgress)
+      .onStepEnter(handleStepEnter)
+      .onContainerEnter(handleContainerEnter)
+      .onContainerExit(handleContainerExit);
 
-    // setup resize event
-    window.addEventListener('resize', handleResize);
+  // setup resize event
+  window.addEventListener('resize', handleResize);
+
 }
 
 // kick things off
