@@ -7,7 +7,7 @@ SCROLL.selectAll("div")
       .append("div")
       .attr("class", "step")
       .append("p")
-      .text(String);
+      .html(String);
 
 var STEP = SCROLL.selectAll('.step');
 
@@ -21,7 +21,7 @@ d3.select('#intro_headline')
     .append('div')
     .attr('class', 'intro__hed')
     .append('h1')
-    .text(String);
+    .html(String);
 
 d3.select('#intro_text')
   .selectAll('div')
@@ -31,7 +31,7 @@ d3.select('#intro_text')
     .append('div')
     .attr('class', 'intro__dek')
     .append('p')
-    .text(String);
+    .html(String);
 
 // Initialize outro
 d3.select('#outro')
@@ -42,7 +42,7 @@ d3.select('#outro')
     .append('div')
     .attr('class', 'intro__dek')
     .append('p')
-    .text(String);
+    .html(String);
 
 
 var GRAPHIC = d3.select('#scroll').select('.scroll__graphic');
