@@ -76,92 +76,77 @@ const STORY = [
         "caption": "Jack Batchelder was killed in prison by multiple stab wounds in the jugular."
     },
 
-
-
-
-
-
-
-
     {
         "step": "",
         "chart": "",
-        "caption": "Part 2: this is a transition thingy"
+        "caption": ""
     },
-
-
-
-
-
-
-
-
 
     {
         "step": "50632: JAMES MATLOCK",
         "chart": "A50632/photograph.png",
         "alt": "Photograph of James Matlock",
-        "caption": ""
+        "caption": "James Matlock"
     },
     {
         "step": "MATLOCK - 1959\nFirst Conviction",
         "chart": "A50632/1959/conviction.png",
         "alt": "1959 First conviction for Jame Matlock",
-        "caption": ""
+        "caption": "James Matlock's first conviction was for robbery, assault with a deadly weapon, and kidnapping."
     },
     {
         "step": "MATLOCK - 1959\nPolice Report",
         "chart": "A50632/1959/police_report.png",
         "alt": "Police report for James Matlock's 1959 Armed Robbery",
-        "caption": ""
+        "caption": "The official police report states that Matlock was one of three men that held up a bar in Berkely. The assualt with a deadly weapon was due to the use of 'pistol-whipping' and 'judo-chopping'. The kidnapping was because they tied somebody up."
     },
     {
         "step": "MATLOCK - 1959\nHis Report",
         "chart": "A50632/1959/his_report.png",
         "alt": "James Matlock's account of the 1959 Armed Robbery",
-        "caption": ""
+        "caption": "Matlock says he did it to help his mother."
     },
     {
         "step": "MATLOCK - 1965\nParoled",
         "chart": "A50632/1965/parole_notes.png",
         "alt": "1965 Matlock released on Parole",
-        "caption": "wants to be janitor, admits guilt"
+        "caption": "In a parole hearing six years later, he seems to have given some serious thought as to mhy he pistol-whipped the man he tied up. And he thinks that he'd probably be a janitor -- maybe a construction worker -- if he were paroled.  Parole: GRANTED."
     },
     {
         "step": "MATLOCK - 1966\nUn-Paroled",
         "chart": "A50632/1966/parole_violation.png",
         "alt": "1966 Matlock violates Parole",
-        "caption": "simulated holdup after leaving the country"
+        "caption": "... but he wasn't out very long before he gets brough back in for violating the terms of parole and holding up a service station."
     },
     {
         "step": "MATLOCK - 1966\nHis account",
         "chart": "A50632/1966/his_account.png",
         "alt": "1966 Matlock violates Parole",
-        "caption": "bathroom stranded"
+        "caption": "Why did he hold up a service station? Well, he was on a Las Vegas road trip with his friend and got left behind when he went to use the bathroom. Holding up the service station with a pretend finger-gun just seemed like the easiest way to get back to his girlfriend. "
     },
     {
         "step": "MATLOCK - 1972\nParole Hearing",
         "chart": "A50632/1972/career_plans.png",
         "alt": "1972 Matlock Parole Hearing",
-        "caption": "fender work"
+        "caption": "Another six years pass, and Matlock's in another parole hearing. Now when he's asked about what type of work he'd like, now he's thinking that a body shop would be a better fit than construction. Parole: DENIED."
     },
     {
         "step": "MATLOCK - 1973\nParole Hearing",
         "chart": "A50632/1973/career_plans.png",
         "alt": "1973 Matlock Parole Hearing",
-        "caption": "started serology lab"
-    },
+        "caption": "Over the next year, he starts working in a serology lab and a University researcher says that it's a potential line of work for him if he were to get out. Parole: DENIED."
+     },
     {
         "step": "MATLOCK - 1974\nParole Hearing",
         "chart": "A50632/1974/parole_report.png",
         "alt": "1974 Matlock Parole Hearing",
-        "caption": "started going to church, good at lab work"
+        "caption": "Another year, another parole hearing. Now he's found religion and has doubled-down on his interest in being a lab tech. The researcher running his Serology lab will help him find a job. Parole: GRANTED."
     },
     {
         "step": "50632: JAMES MATLOCK",
         "chart": "A50632/1975/parole_agreement.png",
         "alt": "1975 Parole Agreement for James Matlock",
-        "caption": "In the summer 1975, James Matlock was paroled again. There are no additional records, so I assume that this is a happy ending."
+        "caption": "In the summer 1975, James Matlock was approved for another parole and there are no additional records. I assume that this is a happy ending."
     }
 ]
 
