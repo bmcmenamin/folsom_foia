@@ -1,4 +1,5 @@
 const STATIC_TEXT = {
+    "title": "Matlock and Batchelder",
     "headlines": [
         "These men have receptions..."
     ],

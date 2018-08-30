@@ -13,6 +13,10 @@ var STEP = SCROLL.selectAll('.step');
 
 
 // Initialize intro
+
+d3.select('#headtitle')
+  .text(STATIC_TEXT.title)
+
 d3.select('#intro_headline')
   .selectAll('div')
   .data(STATIC_TEXT.headlines)
