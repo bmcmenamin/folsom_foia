@@ -92,55 +92,55 @@ const STORY = [
     {
         "step": "MATLOCK - 1959\nFirst Conviction",
         "chart": "A50632/1959/conviction.png",
-        "alt": "1959 First conviction for Jame Matlock",
+        "alt": "James Matlock's first conviction in 1959",
         "caption": "James Matlock's first conviction was for robbery, assault with a deadly weapon, and kidnapping."
     },
     {
         "step": "MATLOCK - 1959\nPolice Report",
         "chart": "A50632/1959/police_report.png",
-        "alt": "Police report for James Matlock's 1959 Armed Robbery",
+        "alt": "Police report for James Matlock's 1959 Armed Robbery and Kidnapping",
         "caption": "The official police report states that Matlock was one of three men that held up a bar in Berkeley. The assualt with a deadly weapon was due to the use of 'pistol-whipping' and 'judo-chopping'. The kidnapping was because they tied somebody up. All for less than $250."
     },
     {
         "step": "MATLOCK - 1959\nHis Report",
         "chart": "A50632/1959/his_report.png",
-        "alt": "James Matlock's account of the 1959 Armed Robbery",
+        "alt": "James Matlock's account of the 1959 Armed Robbery and Kidnapping",
         "caption": "Matlock says he did it to help his mother."
     },
     {
         "step": "MATLOCK - 1965\nParoled",
         "chart": "A50632/1965/parole_notes.png",
-        "alt": "1965 Matlock released on Parole",
+        "alt": "Parole report for James Matlock in 1965",
         "caption": "Six years later, he was up for parole. He had meaningfully introspected why he did what he did, and had plans to be a janitor -- maybe a construction worker -- if he were paroled.  Parole: GRANTED."
     },
     {
         "step": "MATLOCK - 1966\nUn-Paroled",
         "chart": "A50632/1966/parole_violation.png",
-        "alt": "1966 Matlock violates Parole",
+        "alt": "James Matlock violates parole in 1966",
         "caption": "He wasn't out very long before things went wrong and he was brought back for violating multiple terms of his parole: leaving the county, driving a car, holding up a service station, and stealing a car. Presumably he drove the stolen car as well, but they didn't bring that part up."
     },
     {
         "step": "MATLOCK - 1966\nHis account",
         "chart": "A50632/1966/his_account.png",
-        "alt": "1966 Matlock violates Parole",
+        "alt": "James Matlock's acconut of violating parole in 1966",
         "caption": "So why did he hold up a service station? Well, he was on a Las Vegas road trip with his friend and got left behind when he went to use the bathroom. Holding up the service station with a pretend finger-gun just seemed like the easiest way to get back home to his girlfriend. "
     },
     {
         "step": "MATLOCK - 1972\nParole Hearing",
         "chart": "A50632/1972/career_plans.png",
-        "alt": "1972 Matlock Parole Hearing",
+        "alt": "Parole report for James Matlock in 1972",
         "caption": "Matlock has another six years later. Now when he's asked about what type of work he'd like, he's thinking that a body shop would be a better fit than janitorial or construction work. Parole: DENIED."
     },
     {
         "step": "MATLOCK - 1973\nParole Hearing",
         "chart": "A50632/1973/career_plans.png",
-        "alt": "1973 Matlock Parole Hearing",
+        "alt": "Parole report for James Matlock in 1973",
         "caption": "In the next year he starts working in a serology lab and a University researcher says that it might be a good potential line of work for him. He told the parole board. Parole: DENIED."
      },
     {
         "step": "MATLOCK - 1974\nParole Hearing",
         "chart": "A50632/1974/parole_report.png",
-        "alt": "1974 Matlock Parole Hearing",
+        "alt": "Parole report for James Matlock in 1974",
         "caption": "Another year passes, and he's in another parole hearing. Now he's found religion and has doubled-down on his interest in becoming a lab tech. The researcher running the Serology lab says that they'll help him find a job. Parole: GRANTED."
     },
     {
